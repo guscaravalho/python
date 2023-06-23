@@ -83,7 +83,7 @@ def scrape_game_log(player_name):
                     # Add the data to the list
                     data.append([season, player_name, game_count, date, player_age, team, location, opponent, streak, game_entrance, player_minutes, field_goals_made, field_goals_attempted, field_goal_percentage, three_pointers_made, three_pointers_attempted, three_point_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, rebounds_offensive, rebounds_defensive, rebounds_total, assists, steals, blocks, turnovers, personal_fouls, points, hollinger_score, plus_minus])
             
-            # Define the file path and name
+            # Change this folder path to make sense on whatever computer you're running this code on.
             folder_path = 'C:\\Users\\gcaravalho\\Code\\Python\\Basketball\\Game Log CSVs'
             file_name = f'{player_name} {season} Regular Season.csv'
 
