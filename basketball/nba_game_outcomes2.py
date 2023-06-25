@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import os
 import csv
 
+# First function takes NBA team as input ("DEN"), scrapes game outcome data for a given season, and outputs a CSV
+
 def scrape_game_outcomes(team):
     season = "2023"
     url= f'https://www.basketball-reference.com/teams/{team}/{season}_games.html'
@@ -51,35 +53,41 @@ def scrape_game_outcomes(team):
                     # Add the data to the list
                     data.append([season, team, game_date, start_time, location, opponent, outcome, game_length, team_score, opponent_score, total_wins, total_losses, win_loss_streak])
             
-            return data
+            # Define location and file name for data output CSV files
+            folder_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball\\Game Outcomes'
+            file_name = f'{team} {season} Regular Season.csv'
+            file_path = os.path.join(folder_path, file_name)
+
+            # Write the data to a CSV file
+            #file_path = f'{player_name} {season} Regular Season.csv'
+            with open(file_path, 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(["Season", "Team", "Game Date", "Start Time", "Location", "Opponent","Outcome", "Game Length", "Team Score", "Opponent Score", "Wins", "Losses", "Win/Loss Streak"])
+                writer.writerows(data)
+
+            print(f"Data saved to {file_path}.")
+            
         else:
             print(f"Couldn't find game outcomes for {team}.")
     else:
         print(f"Website wasn't up when searching for {team} game outcomes.")
 
-def scrape_game_outcomes_for_teams(teams):
-    folder_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball\\Game Outcomes'
-    season = "2023"
+# scrape_game_outcomes("LAC")
 
-    # Loop through the teams
-    for team in teams:
-        file_name = f'{team} {season} Regular Season.csv'
-        file_path = os.path.join(folder_path, file_name)
+# Second function generates a list of NBA teams and iterates the values of that list through the scraper function above
 
-        # Scrape game outcomes for the team
-        data = scrape_game_outcomes(team)
+def generate_team_list(team_list_file_path):
+    with open(team_list_file_path, 'r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        
+        for row in reader:
+            team = row[0]  # Assuming the team name is in the first column
+            scrape_game_outcomes(team)
 
-        if data:
-            # Write the data to a CSV file
-            with open(file_path, 'w', newline='') as file:
-                writer = csv.writer(file)
-                header_row = ["Season", "Team", "Game Date", "Start Time", "Location", "Opponent", "Outcome", "Game Length", "Team Score", "Opponent Score", "Wins", "Losses", "Streak"]
-                writer.writerow(header_row)
-                writer.writerows(data)
+# Define location and file name for list of NBA teams.
+folder_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball'
+file_name = 'nba_teams.csv'
+team_list_file_path = os.path.join(folder_path, file_name)
 
-            print(f"Saved data for {team} {season} season to {file_path}.")
-        else:
-            print(f"No data found for {team}.")
-
-# Read the teams from a CSV file
-teams_file_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball\\"NBA teams.csv"'
+team = generate_team_list(team_list_file_path)
