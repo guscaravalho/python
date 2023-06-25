@@ -72,9 +72,10 @@ def scrape_game_outcomes(team):
     else:
         print(f"Website wasn't up when searching for {team} game outcomes.")
 
+# use the command below to check this block of code by itself. 
 # scrape_game_outcomes("LAC")
 
-# Second function generates a list of NBA teams and iterates the values of that list through the scraper function above
+# Second function accepts a list of NBA teams from a CSV file and iterates the values of that list through the scraper function above
 
 def generate_team_list(team_list_file_path):
     with open(team_list_file_path, 'r') as file:
@@ -83,7 +84,7 @@ def generate_team_list(team_list_file_path):
         
         for row in reader:
             team = row[0]  # Assuming the team name is in the first column
-            scrape_game_outcomes(team)
+            scrape_game_outcomes(team)  # This command invokes the function above and inserts the team name
 
 # Define location and file name for list of NBA teams.
 folder_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball'
