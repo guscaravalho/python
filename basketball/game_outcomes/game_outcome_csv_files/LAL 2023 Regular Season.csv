@@ -1,0 +1,84 @@
+Season,Team,Game Date,Start Time,Location,Opponent,Outcome,Game Length,Team Score,Opponent Score,Wins,Losses,Win/Loss Streak
+2023,LAL,"Tue, Oct 18, 2022",10:00p,Away,Golden State Warriors,Loss,Normal,109,123,0,1,L 1
+2023,LAL,"Thu, Oct 20, 2022",10:00p,Home,Los Angeles Clippers,Loss,Normal,97,103,0,2,L 2
+2023,LAL,"Sun, Oct 23, 2022",3:30p,Home,Portland Trail Blazers,Loss,Normal,104,106,0,3,L 3
+2023,LAL,"Wed, Oct 26, 2022",10:00p,Away,Denver Nuggets,Loss,Normal,99,110,0,4,L 4
+2023,LAL,"Fri, Oct 28, 2022",8:00p,Away,Minnesota Timberwolves,Loss,Normal,102,111,0,5,L 5
+2023,LAL,"Sun, Oct 30, 2022",9:30p,Home,Denver Nuggets,Win,Normal,121,110,1,5,W 1
+2023,LAL,"Wed, Nov 2, 2022",10:30p,Home,New Orleans Pelicans,Win,Overtime,120,117,2,5,W 2
+2023,LAL,"Fri, Nov 4, 2022",10:30p,Home,Utah Jazz,Loss,Normal,116,130,2,6,L 1
+2023,LAL,"Sun, Nov 6, 2022",3:30p,Home,Cleveland Cavaliers,Loss,Normal,100,114,2,7,L 2
+2023,LAL,"Mon, Nov 7, 2022",10:15p,Away,Utah Jazz,Loss,Normal,116,139,2,8,L 3
+2023,LAL,"Wed, Nov 9, 2022",10:00p,Away,Los Angeles Clippers,Loss,Normal,101,114,2,9,L 4
+2023,LAL,"Fri, Nov 11, 2022",10:30p,Home,Sacramento Kings,Loss,Normal,114,120,2,10,L 5
+2023,LAL,"Sun, Nov 13, 2022",9:30p,Home,Brooklyn Nets,Win,Normal,116,103,3,10,W 1
+2023,LAL,"Fri, Nov 18, 2022",10:30p,Home,Detroit Pistons,Win,Normal,128,121,4,10,W 2
+2023,LAL,"Sun, Nov 20, 2022",9:30p,Home,San Antonio Spurs,Win,Normal,123,92,5,10,W 3
+2023,LAL,"Tue, Nov 22, 2022",10:00p,Away,Phoenix Suns,Loss,Normal,105,115,5,11,L 1
+2023,LAL,"Fri, Nov 25, 2022",8:00p,Away,San Antonio Spurs,Win,Normal,105,94,6,11,W 1
+2023,LAL,"Sat, Nov 26, 2022",8:00p,Away,San Antonio Spurs,Win,Normal,143,138,7,11,W 2
+2023,LAL,"Mon, Nov 28, 2022",10:30p,Home,Indiana Pacers,Loss,Normal,115,116,7,12,L 1
+2023,LAL,"Wed, Nov 30, 2022",10:30p,Home,Portland Trail Blazers,Win,Normal,128,109,8,12,W 1
+2023,LAL,"Fri, Dec 2, 2022",7:30p,Away,Milwaukee Bucks,Win,Normal,133,129,9,12,W 2
+2023,LAL,"Sun, Dec 4, 2022",6:00p,Away,Washington Wizards,Win,Normal,130,119,10,12,W 3
+2023,LAL,"Tue, Dec 6, 2022",7:30p,Away,Cleveland Cavaliers,Loss,Normal,102,116,10,13,L 1
+2023,LAL,"Wed, Dec 7, 2022",7:30p,Away,Toronto Raptors,Loss,Normal,113,126,10,14,L 2
+2023,LAL,"Fri, Dec 9, 2022",7:30p,Away,Philadelphia 76ers,Loss,Overtime,122,133,10,15,L 3
+2023,LAL,"Sun, Dec 11, 2022",6:00p,Away,Detroit Pistons,Win,Normal,124,117,11,15,W 1
+2023,LAL,"Tue, Dec 13, 2022",10:00p,Home,Boston Celtics,Loss,Overtime,118,122,11,16,L 1
+2023,LAL,"Fri, Dec 16, 2022",10:00p,Home,Denver Nuggets,Win,Normal,126,108,12,16,W 1
+2023,LAL,"Sun, Dec 18, 2022",9:30p,Home,Washington Wizards,Win,Normal,119,117,13,16,W 2
+2023,LAL,"Mon, Dec 19, 2022",9:00p,Away,Phoenix Suns,Loss,Normal,104,130,13,17,L 1
+2023,LAL,"Wed, Dec 21, 2022",10:00p,Away,Sacramento Kings,Loss,Normal,120,134,13,18,L 2
+2023,LAL,"Fri, Dec 23, 2022",10:30p,Home,Charlotte Hornets,Loss,Normal,130,134,13,19,L 3
+2023,LAL,"Sun, Dec 25, 2022",2:30p,Away,Dallas Mavericks,Loss,Normal,115,124,13,20,L 4
+2023,LAL,"Tue, Dec 27, 2022",7:00p,Away,Orlando Magic,Win,Normal,129,110,14,20,W 1
+2023,LAL,"Wed, Dec 28, 2022",7:30p,Away,Miami Heat,Loss,Normal,98,112,14,21,L 1
+2023,LAL,"Fri, Dec 30, 2022",7:30p,Away,Atlanta Hawks,Win,Normal,130,121,15,21,W 1
+2023,LAL,"Mon, Jan 2, 2023",7:00p,Away,Charlotte Hornets,Win,Normal,121,115,16,21,W 2
+2023,LAL,"Wed, Jan 4, 2023",10:00p,Home,Miami Heat,Win,Normal,112,109,17,21,W 3
+2023,LAL,"Fri, Jan 6, 2023",10:30p,Home,Atlanta Hawks,Win,Normal,130,114,18,21,W 4
+2023,LAL,"Sat, Jan 7, 2023",10:00p,Away,Sacramento Kings,Win,Normal,136,134,19,21,W 5
+2023,LAL,"Mon, Jan 9, 2023",9:00p,Away,Denver Nuggets,Loss,Normal,109,122,19,22,L 1
+2023,LAL,"Thu, Jan 12, 2023",10:00p,Home,Dallas Mavericks,Loss,Normal,115,119,19,23,L 2
+2023,LAL,"Sun, Jan 15, 2023",9:30p,Home,Philadelphia 76ers,Loss,Normal,112,113,19,24,L 3
+2023,LAL,"Mon, Jan 16, 2023",10:30p,Home,Houston Rockets,Win,Normal,140,132,20,24,W 1
+2023,LAL,"Wed, Jan 18, 2023",10:30p,Home,Sacramento Kings,Loss,Normal,111,116,20,25,L 1
+2023,LAL,"Fri, Jan 20, 2023",10:00p,Home,Memphis Grizzlies,Win,Normal,122,121,21,25,W 1
+2023,LAL,"Sun, Jan 22, 2023",9:00p,Away,Portland Trail Blazers,Win,Normal,121,112,22,25,W 2
+2023,LAL,"Tue, Jan 24, 2023",10:00p,Home,Los Angeles Clippers,Loss,Normal,115,133,22,26,L 1
+2023,LAL,"Wed, Jan 25, 2023",10:30p,Home,San Antonio Spurs,Win,Normal,113,104,23,26,W 1
+2023,LAL,"Sat, Jan 28, 2023",8:30p,Away,Boston Celtics,Loss,Overtime,121,125,23,27,L 1
+2023,LAL,"Mon, Jan 30, 2023",7:30p,Away,Brooklyn Nets,Loss,Normal,104,121,23,28,L 2
+2023,LAL,"Tue, Jan 31, 2023",7:30p,Away,New York Knicks,Win,Overtime,129,123,24,28,W 1
+2023,LAL,"Thu, Feb 2, 2023",7:00p,Away,Indiana Pacers,Win,Normal,112,111,25,28,W 2
+2023,LAL,"Sat, Feb 4, 2023",6:00p,Away,New Orleans Pelicans,Loss,Normal,126,131,25,29,L 1
+2023,LAL,"Tue, Feb 7, 2023",10:00p,Home,Oklahoma City Thunder,Loss,Normal,130,133,25,30,L 2
+2023,LAL,"Thu, Feb 9, 2023",10:00p,Home,Milwaukee Bucks,Loss,Normal,106,115,25,31,L 3
+2023,LAL,"Sat, Feb 11, 2023",8:30p,Away,Golden State Warriors,Win,Normal,109,103,26,31,W 1
+2023,LAL,"Mon, Feb 13, 2023",10:00p,Away,Portland Trail Blazers,Loss,Normal,115,127,26,32,L 1
+2023,LAL,"Wed, Feb 15, 2023",10:00p,Home,New Orleans Pelicans,Win,Normal,120,102,27,32,W 1
+2023,LAL,"Thu, Feb 23, 2023",10:00p,Home,Golden State Warriors,Win,Normal,124,111,28,32,W 2
+2023,LAL,"Sun, Feb 26, 2023",3:30p,Away,Dallas Mavericks,Win,Normal,111,108,29,32,W 3
+2023,LAL,"Tue, Feb 28, 2023",7:30p,Away,Memphis Grizzlies,Loss,Normal,109,121,29,33,L 1
+2023,LAL,"Wed, Mar 1, 2023",8:00p,Away,Oklahoma City Thunder,Win,Normal,123,117,30,33,W 1
+2023,LAL,"Fri, Mar 3, 2023",10:30p,Home,Minnesota Timberwolves,Loss,Normal,102,110,30,34,L 1
+2023,LAL,"Sun, Mar 5, 2023",3:30p,Home,Golden State Warriors,Win,Normal,113,105,31,34,W 1
+2023,LAL,"Tue, Mar 7, 2023",10:00p,Home,Memphis Grizzlies,Win,Normal,112,103,32,34,W 2
+2023,LAL,"Fri, Mar 10, 2023",10:30p,Home,Toronto Raptors,Win,Normal,122,112,33,34,W 3
+2023,LAL,"Sun, Mar 12, 2023",9:00p,Home,New York Knicks,Loss,Normal,108,112,33,35,L 1
+2023,LAL,"Tue, Mar 14, 2023",8:00p,Away,New Orleans Pelicans,Win,Normal,123,108,34,35,W 1
+2023,LAL,"Wed, Mar 15, 2023",8:00p,Away,Houston Rockets,Loss,Normal,110,114,34,36,L 1
+2023,LAL,"Fri, Mar 17, 2023",10:30p,Home,Dallas Mavericks,Loss,Normal,110,111,34,37,L 2
+2023,LAL,"Sun, Mar 19, 2023",9:30p,Home,Orlando Magic,Win,Normal,111,105,35,37,W 1
+2023,LAL,"Wed, Mar 22, 2023",10:00p,Home,Phoenix Suns,Win,Normal,122,111,36,37,W 2
+2023,LAL,"Fri, Mar 24, 2023",10:30p,Home,Oklahoma City Thunder,Win,Normal,116,111,37,37,W 3
+2023,LAL,"Sun, Mar 26, 2023",3:30p,Home,Chicago Bulls,Loss,Normal,108,118,37,38,L 1
+2023,LAL,"Wed, Mar 29, 2023",8:00p,Away,Chicago Bulls,Win,Normal,121,110,38,38,W 1
+2023,LAL,"Fri, Mar 31, 2023",8:00p,Away,Minnesota Timberwolves,Win,Normal,123,111,39,38,W 2
+2023,LAL,"Sun, Apr 2, 2023",7:00p,Away,Houston Rockets,Win,Normal,134,109,40,38,W 3
+2023,LAL,"Tue, Apr 4, 2023",9:00p,Away,Utah Jazz,Win,Overtime,135,133,41,38,W 4
+2023,LAL,"Wed, Apr 5, 2023",10:00p,Away,Los Angeles Clippers,Loss,Normal,118,125,41,39,L 1
+2023,LAL,"Fri, Apr 7, 2023",10:30p,Home,Phoenix Suns,Win,Normal,121,107,42,39,W 1
+2023,LAL,"Sun, Apr 9, 2023",3:30p,Home,Utah Jazz,Win,Normal,128,117,43,39,W 2
+2023,LAL,"Tue, Apr 11, 2023",10:00p,Home,Minnesota Timberwolves,Win,Overtime,108,102,44,39,W 3

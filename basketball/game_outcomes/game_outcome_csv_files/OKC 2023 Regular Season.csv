@@ -1,0 +1,85 @@
+Season,Team,Game Date,Start Time,Location,Opponent,Outcome,Game Length,Team Score,Opponent Score,Wins,Losses,Win/Loss Streak
+2023,OKC,"Wed, Oct 19, 2022",8:00p,Away,Minnesota Timberwolves,Loss,Normal,108,115,0,1,L 1
+2023,OKC,"Sat, Oct 22, 2022",9:00p,Away,Denver Nuggets,Loss,Normal,117,122,0,2,L 2
+2023,OKC,"Sun, Oct 23, 2022",8:00p,Home,Minnesota Timberwolves,Loss,Normal,106,116,0,3,L 3
+2023,OKC,"Tue, Oct 25, 2022",8:00p,Home,Los Angeles Clippers,Win,Normal,108,94,1,3,W 1
+2023,OKC,"Thu, Oct 27, 2022",8:00p,Home,Los Angeles Clippers,Win,Normal,118,110,2,3,W 2
+2023,OKC,"Sat, Oct 29, 2022",9:00p,Away,Dallas Mavericks,Win,Overtime,117,111,3,3,W 3
+2023,OKC,"Tue, Nov 1, 2022",8:00p,Home,Orlando Magic,Win,Normal,116,108,4,3,W 4
+2023,OKC,"Thu, Nov 3, 2022",8:00p,Home,Denver Nuggets,Loss,Normal,110,122,4,4,L 1
+2023,OKC,"Sat, Nov 5, 2022",8:00p,Away,Milwaukee Bucks,Loss,Normal,94,108,4,5,L 2
+2023,OKC,"Mon, Nov 7, 2022",7:30p,Away,Detroit Pistons,Loss,Normal,103,112,4,6,L 3
+2023,OKC,"Wed, Nov 9, 2022",8:00p,Home,Milwaukee Bucks,Loss,Normal,132,136,4,7,L 4
+2023,OKC,"Fri, Nov 11, 2022",8:00p,Home,Toronto Raptors,Win,Normal,132,113,5,7,W 1
+2023,OKC,"Sun, Nov 13, 2022",12:00p,Away,New York Knicks,Win,Normal,145,135,6,7,W 2
+2023,OKC,"Mon, Nov 14, 2022",7:30p,Away,Boston Celtics,Loss,Normal,122,126,6,8,L 1
+2023,OKC,"Wed, Nov 16, 2022",7:00p,Away,Washington Wizards,Win,Normal,121,120,7,8,W 1
+2023,OKC,"Fri, Nov 18, 2022",8:00p,Away,Memphis Grizzlies,Loss,Normal,110,121,7,9,L 1
+2023,OKC,"Mon, Nov 21, 2022",8:00p,Home,New York Knicks,Loss,Normal,119,129,7,10,L 2
+2023,OKC,"Wed, Nov 23, 2022",8:00p,Home,Denver Nuggets,Loss,Overtime,126,131,7,11,L 3
+2023,OKC,"Fri, Nov 25, 2022",8:00p,Home,Chicago Bulls,Win,Overtime,123,119,8,11,W 1
+2023,OKC,"Sat, Nov 26, 2022",8:00p,Away,Houston Rockets,Loss,Normal,105,118,8,12,L 1
+2023,OKC,"Mon, Nov 28, 2022",8:00p,Away,New Orleans Pelicans,Loss,Normal,101,105,8,13,L 2
+2023,OKC,"Wed, Nov 30, 2022",8:00p,Home,San Antonio Spurs,Win,Normal,119,111,9,13,W 1
+2023,OKC,"Sat, Dec 3, 2022",8:00p,Away,Minnesota Timberwolves,Win,Normal,135,128,10,13,W 2
+2023,OKC,"Mon, Dec 5, 2022",7:30p,Away,Atlanta Hawks,Win,Normal,121,114,11,13,W 3
+2023,OKC,"Wed, Dec 7, 2022",8:00p,Away,Memphis Grizzlies,Loss,Normal,102,123,11,14,L 1
+2023,OKC,"Sat, Dec 10, 2022",7:30p,Away,Cleveland Cavaliers,Loss,Normal,102,110,11,15,L 2
+2023,OKC,"Mon, Dec 12, 2022",8:30p,Away,Dallas Mavericks,Loss,Normal,114,121,11,16,L 3
+2023,OKC,"Wed, Dec 14, 2022",8:00p,Home,Miami Heat,Loss,Normal,108,110,11,17,L 4
+2023,OKC,"Fri, Dec 16, 2022",8:00p,Home,Minnesota Timberwolves,Loss,Normal,110,112,11,18,L 5
+2023,OKC,"Sat, Dec 17, 2022",8:00p,Home,Memphis Grizzlies,Win,Normal,115,109,12,18,W 1
+2023,OKC,"Mon, Dec 19, 2022",8:00p,Home,Portland Trail Blazers,Win,Normal,123,121,13,18,W 2
+2023,OKC,"Wed, Dec 21, 2022",8:00p,Home,Portland Trail Blazers,Win,Normal,101,98,14,18,W 3
+2023,OKC,"Fri, Dec 23, 2022",8:00p,Home,New Orleans Pelicans,Loss,Overtime,125,128,14,19,L 1
+2023,OKC,"Tue, Dec 27, 2022",8:00p,Home,San Antonio Spurs,Win,Normal,130,114,15,19,W 1
+2023,OKC,"Thu, Dec 29, 2022",7:00p,Away,Charlotte Hornets,Loss,Normal,113,121,15,20,L 1
+2023,OKC,"Sat, Dec 31, 2022",8:00p,Home,Philadelphia 76ers,Loss,Normal,96,115,15,21,L 2
+2023,OKC,"Tue, Jan 3, 2023",8:00p,Home,Boston Celtics,Win,Normal,150,117,16,21,W 1
+2023,OKC,"Wed, Jan 4, 2023",7:00p,Away,Orlando Magic,Loss,Normal,115,126,16,22,L 1
+2023,OKC,"Fri, Jan 6, 2023",8:00p,Home,Washington Wizards,Win,Normal,127,110,17,22,W 1
+2023,OKC,"Sun, Jan 8, 2023",7:00p,Home,Dallas Mavericks,Win,Normal,120,109,18,22,W 2
+2023,OKC,"Tue, Jan 10, 2023",7:30p,Away,Miami Heat,Loss,Normal,111,112,18,23,L 1
+2023,OKC,"Thu, Jan 12, 2023",7:00p,Away,Philadelphia 76ers,Win,Normal,133,114,19,23,W 1
+2023,OKC,"Fri, Jan 13, 2023",8:00p,Away,Chicago Bulls,Win,Normal,124,110,20,23,W 2
+2023,OKC,"Sun, Jan 15, 2023",6:00p,Away,Brooklyn Nets,Win,Normal,112,102,21,23,W 3
+2023,OKC,"Wed, Jan 18, 2023",8:00p,Home,Indiana Pacers,Win,Normal,126,106,22,23,W 4
+2023,OKC,"Fri, Jan 20, 2023",10:00p,Away,Sacramento Kings,Loss,Normal,113,118,22,24,L 1
+2023,OKC,"Sun, Jan 22, 2023",8:00p,Away,Denver Nuggets,Win,Normal,101,99,23,24,W 1
+2023,OKC,"Wed, Jan 25, 2023",8:00p,Home,Atlanta Hawks,Loss,Normal,132,137,23,25,L 1
+2023,OKC,"Fri, Jan 27, 2023",8:00p,Home,Cleveland Cavaliers,Win,Normal,112,100,24,25,W 1
+2023,OKC,"Mon, Jan 30, 2023",8:00p,Home,Golden State Warriors,Loss,Normal,120,128,24,26,L 1
+2023,OKC,"Wed, Feb 1, 2023",8:00p,Away,Houston Rockets,Loss,Normal,106,112,24,27,L 2
+2023,OKC,"Sat, Feb 4, 2023",8:00p,Home,Houston Rockets,Win,Normal,153,121,25,27,W 1
+2023,OKC,"Mon, Feb 6, 2023",10:00p,Away,Golden State Warriors,Loss,Normal,114,141,25,28,L 1
+2023,OKC,"Tue, Feb 7, 2023",10:00p,Away,Los Angeles Lakers,Win,Normal,133,130,26,28,W 1
+2023,OKC,"Fri, Feb 10, 2023",10:00p,Away,Portland Trail Blazers,Win,Normal,138,129,27,28,W 2
+2023,OKC,"Mon, Feb 13, 2023",8:00p,Home,New Orleans Pelicans,Loss,Normal,100,103,27,29,L 1
+2023,OKC,"Wed, Feb 15, 2023",8:00p,Home,Houston Rockets,Win,Normal,133,96,28,29,W 1
+2023,OKC,"Thu, Feb 23, 2023",9:00p,Away,Utah Jazz,Loss,Overtime,119,120,28,30,L 1
+2023,OKC,"Fri, Feb 24, 2023",10:00p,Away,Phoenix Suns,Loss,Normal,115,124,28,31,L 2
+2023,OKC,"Sun, Feb 26, 2023",7:00p,Home,Sacramento Kings,Loss,Normal,115,124,28,32,L 3
+2023,OKC,"Tue, Feb 28, 2023",8:00p,Home,Sacramento Kings,Loss,Normal,117,123,28,33,L 4
+2023,OKC,"Wed, Mar 1, 2023",8:00p,Home,Los Angeles Lakers,Loss,Normal,117,123,28,34,L 5
+2023,OKC,"Fri, Mar 3, 2023",8:00p,Home,Utah Jazz,Win,Normal,130,103,29,34,W 1
+2023,OKC,"Sun, Mar 5, 2023",7:00p,Home,Utah Jazz,Win,Normal,129,119,30,34,W 2
+2023,OKC,"Tue, Mar 7, 2023",8:00p,Home,Golden State Warriors,Win,Normal,137,128,31,34,W 3
+2023,OKC,"Wed, Mar 8, 2023",9:00p,Away,Phoenix Suns,Loss,Normal,101,132,31,35,L 1
+2023,OKC,"Sat, Mar 11, 2023",8:30p,Away,New Orleans Pelicans,Win,Normal,110,96,32,35,W 1
+2023,OKC,"Sun, Mar 12, 2023",7:00p,Away,San Antonio Spurs,Win,Normal,102,90,33,35,W 2
+2023,OKC,"Tue, Mar 14, 2023",8:00p,Home,Brooklyn Nets,Win,Normal,121,107,34,35,W 3
+2023,OKC,"Thu, Mar 16, 2023",7:30p,Away,Toronto Raptors,Loss,Normal,111,128,34,36,L 1
+2023,OKC,"Sun, Mar 19, 2023",3:30p,Home,Phoenix Suns,Win,Normal,124,120,35,36,W 1
+2023,OKC,"Tue, Mar 21, 2023",10:30p,Away,Los Angeles Clippers,Win,Normal,101,100,36,36,W 2
+2023,OKC,"Thu, Mar 23, 2023",10:30p,Away,Los Angeles Clippers,Loss,Normal,105,127,36,37,L 1
+2023,OKC,"Fri, Mar 24, 2023",10:30p,Away,Los Angeles Lakers,Loss,Normal,111,116,36,38,L 2
+2023,OKC,"Sun, Mar 26, 2023",7:00p,Away,Portland Trail Blazers,Win,Normal,118,112,37,38,W 1
+2023,OKC,"Tue, Mar 28, 2023",8:00p,Home,Charlotte Hornets,Loss,Normal,134,137,37,39,L 1
+2023,OKC,"Wed, Mar 29, 2023",8:00p,Home,Detroit Pistons,Win,Normal,107,106,38,39,W 1
+2023,OKC,"Fri, Mar 31, 2023",7:00p,Away,Indiana Pacers,Loss,Normal,117,121,38,40,L 1
+2023,OKC,"Sun, Apr 2, 2023",7:00p,Home,Phoenix Suns,Loss,Normal,118,128,38,41,L 2
+2023,OKC,"Tue, Apr 4, 2023",10:00p,Away,Golden State Warriors,Loss,Normal,125,136,38,42,L 3
+2023,OKC,"Thu, Apr 6, 2023",9:00p,Away,Utah Jazz,Win,Normal,114,98,39,42,W 1
+2023,OKC,"Sun, Apr 9, 2023",3:30p,Home,Memphis Grizzlies,Win,Normal,115,100,40,42,W 2
+2023,OKC,"Wed, Apr 12, 2023",9:30p,Away,New Orleans Pelicans,Win,Normal,123,118,41,42,W 3
+2023,OKC,"Fri, Apr 14, 2023",9:30p,Away,Minnesota Timberwolves,Loss,Normal,95,120,41,43,L 1
