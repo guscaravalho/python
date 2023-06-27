@@ -75,7 +75,7 @@ def scrape_game_outcomes(team):
 # use the command below to check this block of code by itself. 
 # scrape_game_outcomes("LAC")
 
-# Second function accepts a list of NBA teams from a CSV file and iterates the values of that list through the scraper function above
+# This second function accepts a list of NBA teams from a CSV file and iterates the values of that list through the scraper function above
 
 def generate_team_list(team_list_file_path):
     with open(team_list_file_path, 'r') as file:
