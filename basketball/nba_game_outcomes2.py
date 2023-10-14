@@ -6,7 +6,7 @@ import csv
 # First function takes NBA team as input ("DEN"), scrapes game outcome data for a given season, and outputs a CSV
 
 def scrape_game_outcomes(team):
-    season = "2023"
+    season = "2022"
     url= f'https://www.basketball-reference.com/teams/{team}/{season}_games.html'
     
     # Send an HTTP GET request to the URL
@@ -54,7 +54,7 @@ def scrape_game_outcomes(team):
                     data.append([season, team, game_date, start_time, location, opponent, outcome, game_length, team_score, opponent_score, total_wins, total_losses, win_loss_streak])
             
             # Define location and file name for data output CSV files
-            folder_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball\\Game Outcomes'
+            folder_path = 'C:\\Users\\gusca\\Code Outputs\\Basketball\\game_outcomes\\game_outcome_csv_files'
             file_name = f'{team} {season} Regular Season.csv'
             file_path = os.path.join(folder_path, file_name)
 
