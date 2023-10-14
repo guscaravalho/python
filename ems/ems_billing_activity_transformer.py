@@ -163,7 +163,6 @@ def ems_billing_activity_transformer(df):
 def process_csv(input_file, output_file):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(input_file)
-
     # Apply data transformations
     df = transform_data(df)
 
