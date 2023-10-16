@@ -7,12 +7,16 @@ def ems_billing_activity_transformer(df):
     df.rename(columns={'AC ID': 'patient_id'}, inplace=True)
     # rename "ePCR ID" as "incident_id"
     df.rename(columns={'ePCR ID': 'incident_id'}, inplace=True)
-    # create "Unique_ID" column by concatenating "incident_id" and "patient_id" columns
-    df['unique_id'] = df['incident_id'] + '-' + df['patient_id']
+    # cast "patient_id" and "incident_id" columns to strings so they're able to concatenate
+    df['patient_id'] = df['patient_id'].astype(str)
+    df['incident_id'] = df['incident_id'].astype(str)
+    # create unique "incident_patient_id" column by concatenating "incident_id" and "patient_id" columns
+    df['incident_patient_id'] = df['incident_id'] + '-' + df['patient_id']
     # rename "SERV LVL DESC" as "Service_Level"
     df.rename(columns={'SERV LVL DESC': 'service_level'}, inplace=True)
-    # rename "ProcedureCode" as "Procedure_Code"
+    # rename "ProcedureCode" as "Procedure_Code" and then strip away leading and trailing spaces
     df.rename(columns={'ProcedureCode': 'procedure_code'}, inplace=True)
+    df['procedure_code'] = df['procedure_code'].str.strip()
     # create "procedure_code_translator" function to map "procedure_code" values to human-readable translations
     def procedure_code_translator(procedure_code):
         if procedure_code == "A0425":
@@ -27,8 +31,10 @@ def ems_billing_activity_transformer(df):
             return "Interest"
     # apply "procedure_code_translator" function to the contents of the "procedure_code" field and create "billable_service" column
     df['billable_service'] = df['procedure_code'].apply(procedure_code_translator)
-    # rename "Disposition" as "disposition_id" indicating this is an ID field
+    # rename "Disposition" as "disposition_id" indicating this is an ID field and then cast as string and truncate to only first 7 characters
     df.rename(columns={'Disposition': 'disposition_id'}, inplace=True)
+    df['disposition_id'] = df['disposition_id'].astype(str)
+    df['disposition_id'] = df['disposition_id'].str[:7]
     # create "disposition_id_translator_subtype" function to map "disposition_id" values to human-readable translations
     def disposition_id_translator_subtype(disposition_id):
         if disposition_id == "4212001":
@@ -59,6 +65,9 @@ def ems_billing_activity_transformer(df):
             return "Treated, Referred To Law Enforcement"
         elif disposition_id == "4212039":
             return "Standby, No Patient Found"
+        else:
+            print(f"Unmatched disposition_id: {disposition_id}")
+            return "Unmatched"
     # apply "disposition_id_translator_subtype" function to the contents of the "disposition_id" field and create "incident_subtype" column
     df['incident_subtype'] = df['disposition_id'].apply(disposition_id_translator_subtype)
     # create "disposition_id_translator_type" function to map "disposition_id" values to human-readable translations
@@ -75,8 +84,10 @@ def ems_billing_activity_transformer(df):
             return 'DOA'
     # apply "disposition_id_translator_type" function to the contents of the "disposition_id" field and create "incident_subtype" column
     df['incident_type'] = df['disposition_id'].apply(disposition_id_translator_type)
-    # rename "Date of Service" as "incident_date" and cast from datetime to date
-    df['incident_date'] = df['Date of Service'].dt.date
+    # explictly cast "Date of Service" to datetime,rename as "incident_date" and then cast from datetime to date
+    # df['Date of Service'] = pd.to_datetime(df['Date of Service'])
+    # df['incident_date'] = df['Date of Service'].dt.date
+    df.rename(columns={'Date of Service': 'incident_date'}, inplace=True)
     # rename "Invoice" as "invoice_number" indicating this is an invoice number
     df.rename(columns={'Invoice': 'invoice_number'}, inplace=True)
     # rename "Chrg" as "county_fee_amount"
@@ -95,10 +106,14 @@ def ems_billing_activity_transformer(df):
     df.rename(columns={'BadDebtAdjustment': 'to_collections_amount'}, inplace=True)
     # rename "Due" as "outstanding_amount"
     df.rename(columns={'Due': 'outstanding_amount'}, inplace=True)
-    # rename "StatusType" as "cost_recovery_status_id"
+    # rename "StatusType" as "cost_recovery_status_id" and then strip away leading and trailing spaces
     df.rename(columns={'StatusType': 'cost_recovery_id'}, inplace=True)
-    # rename "Status" as "billing_status_id"
-    df.rename(columns={'StatusType': 'billing_status_id'}, inplace=True)
+    df['cost_recovery_id'] = df['cost_recovery_id'].astype(str)
+    df['cost_recovery_id'] = df['cost_recovery_id'].str.strip()
+    # rename "Status" as "billing_status_id" and then strip away leading and trailing spaces
+    df.rename(columns={'Status': 'billing_status_id'}, inplace=True)
+    df['billing_status_id'] = df['billing_status_id'].astype(str)
+    df['billing_status_id'] = df['billing_status_id'].str.strip()
     # create "cost_recovery_id_translator" function to map "cost_recovery_id" values to human-readable translations
     def cost_recovery_id_translator(cost_recovery_id):
         if cost_recovery_id == "1":
@@ -129,45 +144,46 @@ def ems_billing_activity_transformer(df):
     df.rename(columns={'Active Carrier': 'billed_party_current'}, inplace=True)
     # create "billed_party_status" column to denote active billing rows
     df['billed_party_status'] = np.where(df['billed_party'] == df['billed_party_current'], 'Active', 'Not Active')
-    # rename "OriginalSaleDate" as "billable_incident_create_date" and cast from datetime to date
-    df['billable_incident_create_date'] = df['OriginalSaleDate'].dt.date
-    # rename "SaleDate" as "billed_party_create_date" and cast from datetime to date
-    df['billed_party_create_date'] = df['SaleDate'].dt.date
-    # rename "OriginalSubmitDate" as "first_bill_submission_date" and cast from datetime to date
-    df['first_bill_submission_date'] = df['OriginalSubmitDate'].dt.date
-    # rename "GoToCollectionDate" as "to_collections_date" and cast from datetime to date
-    df['to_collections_date'] = df['GoToCollectionDate'].dt.date
-    # rename "ClosedDate" as "closed_date" and cast from datetime to date
-    df['closed_date'] = df['ClosedDate'].dt.date
-    # rename "Submit Date (Most Recent)" as "closed_date" and cast from datetime to date
-    df['most_recent_billing_date'] = df['Submit Date (Most Recent)'].dt.date
-    # rename "Deposit Date (Most Recent)" as "payment_deposit_date" and cast from datetime to date
-    df['payment_deposit_date'] = df['Deposit Date (Most Recent)'].dt.date
-    # rename "Remit Date (Most Recent)" as "payment_remit_date" and cast from datetime to date
-    df['payment_remit_date'] = df['Remit Date (Most Recent)'].dt.date
-    # rename "Collect Date (Most Recent)" as "payment_from_collections_date" and cast from datetime to date
-    df['payment_from_collections_date'] = df['Collect Date (Most Recent)'].dt.date
-    # rename "Complete" as "complete_date" and cast from datetime to date
-    df['complete_date'] = df['Complete'].dt.date
+    # rename "OriginalSaleDate" as "billable_incident_create_date"
+    df.rename(columns={'OriginalSaleDate': 'billable_incident_create_date'}, inplace=True)
+    # rename "SaleDate" as "billed_party_create_date"
+    df.rename(columns={'SaleDate': 'billed_party_create_date'}, inplace=True)
+    # rename "OriginalSubmitDate" as "first_bill_submission_date"
+    df.rename(columns={'OriginalSubmitDate': 'first_bill_submission_date'}, inplace=True)
+    # rename "GoToCollectionDate" as "to_collections_date"
+    df.rename(columns={'GoToCollectionDate': 'to_collections_date'}, inplace=True)
+    # rename "ClosedDate" as "closed_date"
+    df.rename(columns={'ClosedDate': 'closed_date'}, inplace=True)
+    # rename "Submit Date (Most Recent)" as "closed_date"
+    df.rename(columns={'Submit Date (Most Recent)': 'most_recent_billing_date'}, inplace=True)
+    # rename "Deposit Date (Most Recent)" as "payment_deposit_date"
+    df.rename(columns={'Deposit Date (Most Recent)': 'payment_deposit_date'}, inplace=True)
+    # rename "Remit Date (Most Recent)" as "payment_remit_date"
+    df.rename(columns={'Remit Date (Most Recent)': 'payment_remit_date'}, inplace=True)
+    # rename "Collect Date (Most Recent)" as "payment_from_collections_date"
+    df.rename(columns={'Collect Date (Most Recent)': 'payment_from_collections_date'}, inplace=True)
+    # rename "Complete" as "complete_date"
+    df.rename(columns={'Complete': 'complete_date'}, inplace=True)
     # rename "Denial Reason (Most Recent)" as "denial_reason"
     df.rename(columns={'Denial Reason (Most Recent)': 'denial_reason'}, inplace=True)
     # rename "DoNotBillPatient" as "dont_bill_patient_bin"
     df.rename(columns={'DoNotBillPatient': 'donot_bill_patient_bin'}, inplace=True)
     return df
 
+# find the raw data and transform it
 def process_csv(input_file, output_file):
-    # Read the CSV file into a DataFrame
+    # open and read .csv file
     df = pd.read_csv(input_file)
-
-    # Apply data transformations
+    # apply data transformations
     df = ems_billing_activity_transformer(df)
-
-    # Save the transformed data to a new CSV file
+    # output transformed data as a new .csv file
     df.to_csv(output_file, index=False)
 
+# use this list of input and output .csv files in the same directory as this python script
 input_files = ["FY21 - EMS BILLING ACTIVITY.CSV"]
 output_files = ["EMS Billing Activity FY21 Transformed.csv"]
 
+# loop over all the listed .csv files to create their coorseponding output files
 for i, input_file in enumerate(input_files):
     output_file = output_files[i]
     process_csv(input_file, output_file)
