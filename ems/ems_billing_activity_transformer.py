@@ -84,9 +84,7 @@ def ems_billing_activity_transformer(df):
             return 'DOA'
     # apply "disposition_id_translator_type" function to the contents of the "disposition_id" field and create "incident_subtype" column
     df['incident_type'] = df['disposition_id'].apply(disposition_id_translator_type)
-    # explictly cast "Date of Service" to datetime,rename as "incident_date" and then cast from datetime to date
-    # df['Date of Service'] = pd.to_datetime(df['Date of Service'])
-    # df['incident_date'] = df['Date of Service'].dt.date
+    # rename "Date of Service" as "incident_date"
     df.rename(columns={'Date of Service': 'incident_date'}, inplace=True)
     # rename "Invoice" as "invoice_number" indicating this is an invoice number
     df.rename(columns={'Invoice': 'invoice_number'}, inplace=True)
@@ -168,6 +166,9 @@ def ems_billing_activity_transformer(df):
     df.rename(columns={'Denial Reason (Most Recent)': 'denial_reason'}, inplace=True)
     # rename "DoNotBillPatient" as "dont_bill_patient_bin"
     df.rename(columns={'DoNotBillPatient': 'donot_bill_patient_bin'}, inplace=True)
+    # set columns in logical order
+    df = df[['incident_patient_id', 'incident_id', 'patient_id', 'service_level', 'billable_service', 'incident_type', 'incident_subtype', 'incident_date', 'county_fee_amount', 'total_adjustment_amount', 'contractual_adjustments', 'sales_adjustments', 'billed_amount', 'paid_amount', 'to_collections_amount', 'outstanding_amount', 'cost_recovery_status', 'billing_status', 'billed_party', 'billed_party_current', 'billed_party_status', 'invoice_number', 'denial_reason', 'donot_bill_patient_bin', 'billable_incident_create_date', 'billed_party_create_date', 'first_bill_submission_date', 'to_collections_date', 'closed_date', 'most_recent_billing_date', 'payment_deposit_date', 'payment_remit_date', 'payment_from_collections_date', 'complete_date', 'procedure_code', 'disposition_id', 'cost_recovery_id', 'billing_status_id']]
+    
     return df
 
 # find the raw data and transform it
@@ -180,7 +181,7 @@ def process_csv(input_file, output_file):
     df.to_csv(output_file, index=False)
 
 # use this list of input and output .csv files in the same directory as this python script
-input_files = ["FY21 - EMS BILLING ACTIVITY.CSV"]
+input_files = ["EMS BILLING ACTIVITY FY21.CSV"]
 output_files = ["EMS Billing Activity FY21 Transformed.csv"]
 
 # loop over all the listed .csv files to create their coorseponding output files
