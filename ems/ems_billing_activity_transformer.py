@@ -63,15 +63,15 @@ def ems_billing_activity_transformer(df):
     df['incident_subtype'] = df['disposition_id'].apply(disposition_id_translator_subtype)
     # create "disposition_id_translator_type" function to map "disposition_id" values to human-readable translations
     def disposition_id_translator_type(disposition_id):
-        if value in ['4212001', '4212003']:
+        if disposition_id in ['4212001', '4212003']:
             return 'Assisted'
-        elif value in ['4212005', '4212027', '4212029', '4212031', '4212033', '4212035']:
+        elif disposition_id in ['4212005', '4212027', '4212029', '4212031', '4212033', '4212035']:
             return 'Treated'
-        elif value in ['4212007', '4212009']:
+        elif disposition_id in ['4212007', '4212009']:
             return 'Cancelled'
-        elif value in ['4212011', '4212039']:
+        elif disposition_id in ['4212011', '4212039']:
             return 'No Patient'
-        elif value in ['4212015', '4212019']:
+        elif disposition_id in ['4212015', '4212019']:
             return 'DOA'
     # apply "disposition_id_translator_type" function to the contents of the "disposition_id" field and create "incident_subtype" column
     df['incident_type'] = df['disposition_id'].apply(disposition_id_translator_type)
@@ -153,18 +153,21 @@ def ems_billing_activity_transformer(df):
     df.rename(columns={'Denial Reason (Most Recent)': 'denial_reason'}, inplace=True)
     # rename "DoNotBillPatient" as "dont_bill_patient_bin"
     df.rename(columns={'DoNotBillPatient': 'donot_bill_patient_bin'}, inplace=True)
-
     return df
-
-
-
-
 
 def process_csv(input_file, output_file):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(input_file)
+
     # Apply data transformations
-    df = transform_data(df)
+    df = ems_billing_activity_transformer(df)
 
     # Save the transformed data to a new CSV file
     df.to_csv(output_file, index=False)
+
+input_files = ["FY21 - EMS BILLING ACTIVITY.CSV"]
+output_files = ["EMS Billing Activity FY21 Transformed.csv"]
+
+for i, input_file in enumerate(input_files):
+    output_file = output_files[i]
+    process_csv(input_file, output_file)
