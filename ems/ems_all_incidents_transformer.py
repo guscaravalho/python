@@ -48,6 +48,8 @@ def ems_all_incidents_transformer(df):
             return "Treated, Referred To Law Enforcement"
         elif disposition_id == "4212039":
             return "Standby, No Patient Found"
+        elif disposition_id == "4212902":
+            return "Treated, Transferred Care to Telehealth Provider"
         else:
             print(f"Unmatched disposition_id: {disposition_id}")
             return "Unmatched"
@@ -57,7 +59,7 @@ def ems_all_incidents_transformer(df):
     def disposition_id_translator_type(disposition_id):
         if disposition_id in ['4212001', '4212003']:
             return 'Assisted'
-        elif disposition_id in ['4212005', '4212027', '4212029', '4212031', '4212033', '4212035']:
+        elif disposition_id in ['4212005', '4212027', '4212029', '4212031', '4212033', '4212035', "4212902"]:
             return 'Treated'
         elif disposition_id in ['4212007', '4212009']:
             return 'Cancelled'
@@ -113,8 +115,8 @@ def process_csv(input_file, output_file):
     df.to_csv(output_file, index=False)
 
 # use this list of input and output .csv files in the same directory as this python script
-input_files = ["EMS ALL INCIDENTS FY21.CSV"]
-output_files = ["EMS All Incidents FY21 Transformed.csv"]
+input_files = ["EMS ALL INCIDENTS FY21.CSV", "EMS ALL INCIDENTS FY22.CSV", "EMS ALL INCIDENTS FY23.CSV"]
+output_files = ["Transformed Data/EMS All Incidents FY21 Transformed.csv", "Transformed Data/EMS All Incidents FY22 Transformed.csv", "Transformed Data/EMS All Incidents FY23 Transformed.csv"]
 
 # loop over all the listed .csv files to create their coorseponding output files
 for i, input_file in enumerate(input_files):
