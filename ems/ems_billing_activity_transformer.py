@@ -29,6 +29,8 @@ def ems_billing_activity_transformer(df):
             return "ALS2 Service"
         elif procedure_code == "INTEREST":
             return "Interest"
+        elif procedure_code == "BALANCE":
+            return "Balance"
     # apply "procedure_code_translator" function to the contents of the "procedure_code" field and create "billable_service" column
     df['billable_service'] = df['procedure_code'].apply(procedure_code_translator)
     # rename "Disposition" as "disposition_id" indicating this is an ID field and then cast as string and truncate to only first 7 characters
@@ -183,8 +185,8 @@ def process_csv(input_file, output_file):
     df.to_csv(output_file, index=False)
 
 # use this list of input and output .csv files in the same directory as this python script
-input_files = ["EMS BILLING ACTIVITY FY21.CSV", "EMS BILLING ACTIVITY FY22.CSV", "EMS BILLING ACTIVITY FY23.CSV"]
-output_files = ["Transformed Data/EMS Billing Activity FY21 Transformed.csv", "Transformed Data/EMS Billing Activity FY22 Transformed.csv", "Transformed Data/EMS Billing Activity FY23 Transformed.csv"]
+input_files = ["EMS BILLING ACTIVITY FY18.CSV", "EMS BILLING ACTIVITY FY19.CSV", "EMS BILLING ACTIVITY FY20.CSV", "EMS BILLING ACTIVITY FY21.CSV", "EMS BILLING ACTIVITY FY22.CSV", "EMS BILLING ACTIVITY FY23.CSV"]
+output_files = ["Transformed Data/EMS Billing Activity FY18 Transformed.csv", "Transformed Data/EMS Billing Activity FY19 Transformed.csv", "Transformed Data/EMS Billing Activity FY20 Transformed.csv", "Transformed Data/EMS Billing Activity FY21 Transformed.csv", "Transformed Data/EMS Billing Activity FY22 Transformed.csv", "Transformed Data/EMS Billing Activity FY23 Transformed.csv"]
 
 # loop over all the listed .csv files to create their coorseponding output files
 for i, input_file in enumerate(input_files):

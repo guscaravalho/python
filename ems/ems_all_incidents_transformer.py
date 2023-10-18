@@ -101,8 +101,10 @@ def ems_all_incidents_transformer(df):
     df.rename(columns={'Origin Zip': 'origin_zip'}, inplace=True)
     # rename "Vehicle" as "ems_vehicle_number"
     df.rename(columns={'Vehicle': 'ems_vehicle_number'}, inplace=True)
+    # rename "LeadedMiles" as "trip_miles"
+    df.rename(columns={'LoadedMiles': 'trip_miles'}, inplace=True)
     # set columns in logical order
-    df = df[['incident_patient_id', 'incident_id', 'patient_id', 'trip_type', 'service_level', 'incident_type', 'incident_subtype', 'incident_cost_recovery_status', 'incident_date', 'ems_vehicle_number', 'destination', 'diagnosis1', 'diagnosis1_code', 'diagnosis2', 'diagnosis2_code', 'modifier1', 'modifier2', 'origin_street_address', 'origin_city', 'origin_county', 'origin_state', 'origin_zip', 'disposition_id']]
+    df = df[['incident_patient_id', 'incident_id', 'patient_id', 'trip_type', 'service_level', 'incident_type', 'incident_subtype', 'incident_cost_recovery_status', 'incident_date', 'diagnosis1', 'diagnosis1_code', 'diagnosis2', 'diagnosis2_code', 'modifier1', 'modifier2', 'ems_vehicle_number', 'trip_miles', 'destination', 'origin_street_address', 'origin_city', 'origin_county', 'origin_state', 'origin_zip', 'disposition_id']]
     return df
 
 # find the raw data and transform it
@@ -115,8 +117,8 @@ def process_csv(input_file, output_file):
     df.to_csv(output_file, index=False)
 
 # use this list of input and output .csv files in the same directory as this python script
-input_files = ["EMS ALL INCIDENTS FY21.CSV", "EMS ALL INCIDENTS FY22.CSV", "EMS ALL INCIDENTS FY23.CSV"]
-output_files = ["Transformed Data/EMS All Incidents FY21 Transformed.csv", "Transformed Data/EMS All Incidents FY22 Transformed.csv", "Transformed Data/EMS All Incidents FY23 Transformed.csv"]
+input_files = ["EMS ALL INCIDENTS FY18.CSV", "EMS ALL INCIDENTS FY19.CSV", "EMS ALL INCIDENTS FY20.CSV", "EMS ALL INCIDENTS FY21.CSV", "EMS ALL INCIDENTS FY22.CSV", "EMS ALL INCIDENTS FY23.CSV"]
+output_files = ["Transformed Data/EMS All Incidents FY18 Transformed.csv", "Transformed Data/EMS All Incidents FY19 Transformed.csv", "Transformed Data/EMS All Incidents FY20 Transformed.csv", "Transformed Data/EMS All Incidents FY21 Transformed.csv", "Transformed Data/EMS All Incidents FY22 Transformed.csv", "Transformed Data/EMS All Incidents FY23 Transformed.csv"]
 
 # loop over all the listed .csv files to create their coorseponding output files
 for i, input_file in enumerate(input_files):
