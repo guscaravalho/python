@@ -71,7 +71,6 @@ def ems_billing_activity_transformer(df):
             return "Treated, Transferred Care to Telehealth Provider"
         else:
             print(f"Unmatched disposition_id: {disposition_id}")
-            return "Unmatched"
     # apply "disposition_id_translator_subtype" function to the contents of the "disposition_id" field and create "incident_subtype" column
     df['incident_subtype'] = df['disposition_id'].apply(disposition_id_translator_subtype)
     # create "disposition_id_translator_type" function to map "disposition_id" values to human-readable translations
